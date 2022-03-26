@@ -1,5 +1,6 @@
-package jjfactory.ticketcms.domain;
+package jjfactory.ticketcms.domain.category;
 
+import jjfactory.ticketcms.domain.BaseTimeEntity;
 import lombok.Getter;
 
 import javax.persistence.Column;
