@@ -33,7 +33,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Transactional
     @Override
-    public void deleteByID(Long id){
+    public void deleteById(Long id){
         productRepository.deleteById(id);
     }
 }

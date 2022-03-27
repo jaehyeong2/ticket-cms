@@ -24,7 +24,7 @@ public class ProductApiController {
 
     @DeleteMapping("/{id}")
     public CommonRes<?> delete(@PathVariable Long id){
-        productService.deleteByID(id);
+        productService.deleteById(id);
         return new CommonRes<>(HttpStatus.OK.value(),"");
     }
 }
