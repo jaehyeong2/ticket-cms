@@ -7,12 +7,7 @@ import java.util.List;
 
 public interface UserService {
     User findUserById(Long id);
-
     List<User> findAll();
-
-    @Transactional
     void join(User user);
-
-    @Transactional
     void deleteById(Long id);
 }

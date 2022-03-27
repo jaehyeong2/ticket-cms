@@ -36,10 +36,10 @@
 <div class="container">
     <div class="col-sm-5">
         <h3 style="margin-top: 10px">회원가입 페이지</h3>
-        <form th:action="@{/signup}" th:object="${user}" method="post">
+        <form th:action="@{/signup}" method="post">
             <div class="form-group">
-                <label for="realName">이름</label>
-                <input type="text" name="realName" id="realName" required placeholder="이름을 입력하세요"
+                <label for="name">이름</label>
+                <input type="text" name="name" id="name" required placeholder="이름을 입력하세요"
                        class="form-control form-control-lg">
             </div>
             <div class="form-group">
@@ -62,28 +62,10 @@
             </div>
 
             <input type="submit" value="회원가입" id="btn-save" class="btn btn-primary btn-block">
-            <span style="margin-top: 10px"> 이미 계정이 있으신가요? <a class="linkControl" href="./login.html"
-                                                             th:href="@{/signin}">로그인</a></span>
+            <span style="margin-top: 10px"> 이미 계정이 있으신가요? <a class="linkControl" th:href="@{/signin}">로그인</a></span>
         </form>
     </div>
 </div>
-
-<!--<div class="container">-->
-<!--    &lt;!&ndash;회원가입 폼&ndash;&gt;-->
-<!--    <div class="login__form">-->
-<!--    &lt;!&ndash;회원가입 인풋&ndash;&gt;-->
-<!--        <h3 style="margin-top: 10px">회원가입 페이지</h3>-->
-<!--        <form class="login__input" action="/signup" method="post">-->
-<!--            <input type="text" name="username" placeholder="아이디" required="required" maxlength="20" />-->
-<!--            <input type="password" name="password" placeholder="패스워드" required="required"  />-->
-<!--            <input type="email" name="email" placeholder="이메일" required="required"  />-->
-<!--    &lt;!&ndash;    <input type="text" name="name" placeholder="이름" required="required"  />&ndash;&gt;-->
-<!--            <button>가입</button>-->
-<!--        </form>-->
-<!--    &lt;!&ndash;회원가입 인풋end&ndash;&gt;-->
-<!--    </div>-->
-
-
 <script src="/js/user.js"></script>
 </div>
 </body>

@@ -10,14 +10,4 @@ public class HomeController {
     public String home(){
         return "home";
     }
-
-    @GetMapping("/signin")
-    public String signinForm(){
-        return "auth/signin";
-    }
-
-    @GetMapping("/signup")
-    public String signupForm(){
-        return "auth/signup";
-    }
 }

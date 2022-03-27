@@ -4,6 +4,7 @@ package jjfactory.ticketcms.service.user;
 import jjfactory.ticketcms.domain.user.User;
 import jjfactory.ticketcms.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final BCryptPasswordEncoder encoder;
 
     @Override
     public User findUserById(Long id){
@@ -30,6 +32,11 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public void join (User user){
+        // 패스워드 인코딩
+        String rawPassword = user.getPassword();
+        String encoded = encoder.encode(rawPassword);
+        user.passwordEncode(encoded);
+
         userRepository.save(user);
     }
 
