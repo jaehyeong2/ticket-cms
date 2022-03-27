@@ -27,4 +27,11 @@ public class ProductApiController {
         productService.deleteById(id);
         return new CommonRes<>(HttpStatus.OK.value(),"");
     }
+
+    @PutMapping("/{id}")
+    public CommonRes<?> update(@RequestBody ProductReq productReq, @PathVariable Long id){
+        Product product = productReq.toEntity();
+        productService.updateById(id,product);
+        return new CommonRes<>(HttpStatus.OK.value(),product);
+    }
 }

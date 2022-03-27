@@ -20,36 +20,23 @@ let index = {
     save: function () {
         let data = {
             name: $("#name").val(),
+            username: $("#username").val(),
+            password: $("#password").val(),
+            email: $("#email").val()
         };
 
         $.ajax({
             type: "POST",
-            url: "/category",
+            url: "/signup",
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
             dataType: "json"
         }).done(function () {
-            alert("등록이 완료되었습니다.");
-            history.back();
+            alert("회원가입이 완료되었습니다.");
+            location.href="/";
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
     },
-
-    deleteById: function(){
-        let id = $("#categoryId").text();
-
-        $.ajax({
-            type: "DELETE",
-            url: "/category/"+id,
-            dataType: "json"
-        }).done(function(resp){
-            alert("삭제가 완료되었습니다.");
-            document.location.reload(true);
-        }).fail(function(error){
-            alert(JSON.stringify(error));
-        });
-    },
-
 }
 index.init();

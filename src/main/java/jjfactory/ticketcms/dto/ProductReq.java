@@ -1,5 +1,6 @@
 package jjfactory.ticketcms.dto;
 
+import jjfactory.ticketcms.domain.category.Category;
 import jjfactory.ticketcms.domain.product.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,12 +15,15 @@ public class ProductReq {
     private int deliveryPrice;
     private int totalPrice;
 
+    private Category category;
+
     public Product toEntity(){
         return Product.builder()
                 .name(name)
                 .price(price)
                 .deliveryPrice(deliveryPrice)
                 .totalPrice(totalPrice)
+                .category(category)
                 .build();
     }
 }

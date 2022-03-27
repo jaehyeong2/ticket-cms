@@ -36,4 +36,14 @@ public class ProductServiceImpl implements ProductService{
     public void deleteById(Long id){
         productRepository.deleteById(id);
     }
+
+    @Transactional
+    @Override
+    public void updateById(Long id,Product product){
+        Product findProduct = productRepository.findById(id).orElseThrow(() -> {
+            throw new IllegalArgumentException("조회 실패");
+        });
+
+        findProduct.changeProduct(product.getName(),product.getPrice());
+    }
 }

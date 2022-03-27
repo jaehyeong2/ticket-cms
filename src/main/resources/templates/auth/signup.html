@@ -8,6 +8,9 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -60,10 +63,9 @@
                        aria-describedby="emailHelp">
                 <small id="emailHelp" class="form-text text-muted">이메일은 다른 용도로 사용되지 않습니다</small>
             </div>
-
-            <input type="submit" value="회원가입" id="btn-save" class="btn btn-primary btn-block">
-            <span style="margin-top: 10px"> 이미 계정이 있으신가요? <a class="linkControl" th:href="@{/signin}">로그인</a></span>
         </form>
+        <button id="btn-save" class="btn btn-primary">회원가입</button>
+        <span style="margin-top: 10px"> 이미 계정이 있으신가요? <a class="linkControl" th:href="@{/signin}">로그인</a></span>
     </div>
 </div>
 <script src="/js/user.js"></script>

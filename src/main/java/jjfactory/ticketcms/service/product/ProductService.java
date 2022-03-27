@@ -10,4 +10,5 @@ public interface ProductService {
     List<Product> findAll();
     void save(Product product);
     void deleteById(Long id);
+    void updateById(Long id, Product product);
 }

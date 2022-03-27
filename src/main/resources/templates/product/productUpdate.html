@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>물건 추가</title>
+    <title>물건 수정</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -34,15 +34,15 @@
 </nav>
 
 <div class="container">
-    <h3>상품 등록</h3>
-    <form th:action="@{/product}" method="post">
+    <h3>상품 수정</h3>
+    <form method="post">
         <div class="row">
             <div class="col-sm-5">
-
+                <div style="display: none" th:id="productId" th:text="${product.id}"></div>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" required th:value="${name}" name="name" id="name"
-                           placeholder="Enter name">
+                    <input type="text" class="form-control" required th:value="${product.name}" name="name" id="name"
+                            >
 
                 </div>
                 <div class="form-group">
@@ -55,8 +55,8 @@
                 </div>
                 <div class="form-group">
                     <label for="price">Price</label>
-                    <input type="number" class="form-control" required th:value="${price}" name="price" id="price"
-                           placeholder="Price">
+                    <input type="number" class="form-control" required  th:value="${product.price}" name="price" id="price"
+                           >
                 </div>
 <!--                <div class="form-group">-->
 <!--                    <label for="description">제품 설명</label>-->
@@ -79,7 +79,7 @@
 <!--            </div>-->
         </div>
     </form>
-    <button id="btn-save" class="btn btn-primary">Submit</button>
+    <button id="btn-update" class="btn btn-primary">Submit</button>
 </div>
 <script>
     function readURL(input){

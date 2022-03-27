@@ -1,13 +1,13 @@
 package jjfactory.ticketcms.cotnroller.user;
 
 import jjfactory.ticketcms.domain.user.User;
+import jjfactory.ticketcms.dto.CommonRes;
 import jjfactory.ticketcms.dto.SignUpDto;
 import jjfactory.ticketcms.service.user.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @Controller
@@ -16,10 +16,11 @@ public class UserController {
 
     //회원가입
     @PostMapping("/signup")
-    public String signup(SignUpDto signUpDto){
+    @ResponseBody
+    public CommonRes<?> signup(@RequestBody SignUpDto signUpDto){
         User user = signUpDto.toEntity();
         userService.join(user);
-        return "redirect:/";
+        return new CommonRes<>(HttpStatus.OK.value(),user);
     }
 
     @GetMapping("/signin")
