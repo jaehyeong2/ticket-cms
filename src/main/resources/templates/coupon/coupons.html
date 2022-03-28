@@ -35,7 +35,7 @@
 </nav>
 
 <div class="container">
-    <a th:href="@{/category/add}" style="margin: 20px 0" class="btn btn-primary">카테고리 추가하기</a>
+    <a th:href="@{/coupon/add}" style="margin: 20px 0" class="btn btn-primary">쿠폰 추가하기</a>
     <table class="table">
         <thead class="thead-light">
         <tr>
@@ -47,16 +47,16 @@
         </thead>
         <tbody>
 
-        <tr th:each="category, iStat : ${categories}">
+        <tr th:each="coupon, iStat : ${coupons}">
             <th scope="row" th:text="${iStat.index + 1}"></th>
-            <td th:id="categoryId" style="display:none" th:text="${category.id}"></td>
-            <td th:text="${category.name}"></td>
+            <td th:id="couponId" style="display:none" th:text="${coupon.id}"></td>
+            <td th:text="${coupon.name}"></td>
             <td><button id="btn-delete" class="btn btn-danger">삭제하기</button></td>
-            <td><a href="" th:href="@{/category/update/{id}(id=${category.id})}" class="btn btn-warning">업데이트</a></td>
+            <td><a href="" th:href="@{/coupon/update/{id}(id=${coupon.id})}" class="btn btn-warning">업데이트</a></td>
         </tr>
         </tbody>
     </table>
 </div>
-<script src="/js/category.js"></script>
+<script src="/js/coupon.js"></script>
 </body>
 </html>

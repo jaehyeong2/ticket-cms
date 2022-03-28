@@ -1,14 +1,14 @@
 package jjfactory.ticketcms.dto;
 
-import jjfactory.ticketcms.domain.category.Category;
+import jjfactory.ticketcms.domain.coupon.Coupon;
 import lombok.Data;
 
 @Data
-public class CategoryReq {
+public class CouponReq {
     private String name;
 
-    public Category toEntity(){
-        return Category.builder()
+    public Coupon toEntity(){
+        return Coupon.builder()
                 .name(name)
                 .build();
     }

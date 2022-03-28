@@ -1,6 +1,6 @@
 package jjfactory.ticketcms.dto;
 
-import jjfactory.ticketcms.domain.product.Category;
+import jjfactory.ticketcms.domain.product.enums.Category;
 import jjfactory.ticketcms.domain.product.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;

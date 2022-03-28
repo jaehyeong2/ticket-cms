@@ -1,8 +1,7 @@
 package jjfactory.ticketcms.cotnroller.product;
 
-import jjfactory.ticketcms.domain.product.Category;
 import jjfactory.ticketcms.domain.product.Product;
-import jjfactory.ticketcms.service.category.CategoryServiceImpl;
+import jjfactory.ticketcms.service.coupon.CouponServiceImpl;
 import jjfactory.ticketcms.service.product.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -18,7 +17,7 @@ import java.util.List;
 @Controller
 public class ProductController {
 
-    private final CategoryServiceImpl categoryService;
+    private final CouponServiceImpl categoryService;
     private final ProductServiceImpl productService;
 
     @GetMapping("")

@@ -24,7 +24,7 @@ let index = {
 
         $.ajax({
             type: "POST",
-            url: "/category",
+            url: "/coupon",
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
             dataType: "json"
@@ -37,11 +37,11 @@ let index = {
     },
 
     deleteById: function(){
-        let id = $("#categoryId").text();
+        let id = $("#couponId").text();
 
         $.ajax({
             type: "DELETE",
-            url: "/category/"+id,
+            url: "/coupon/"+id,
             dataType: "json"
         }).done(function(resp){
             alert("삭제가 완료되었습니다.");

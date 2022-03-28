@@ -2,6 +2,7 @@ package jjfactory.ticketcms.domain.user;
 
 import jjfactory.ticketcms.domain.Address;
 import jjfactory.ticketcms.domain.BaseTimeEntity;
+import jjfactory.ticketcms.domain.user.enums.Gender;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

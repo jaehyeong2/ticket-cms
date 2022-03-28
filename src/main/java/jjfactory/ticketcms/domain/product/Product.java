@@ -1,6 +1,7 @@
 package jjfactory.ticketcms.domain.product;
 
 import jjfactory.ticketcms.domain.BaseTimeEntity;
+import jjfactory.ticketcms.domain.product.enums.Category;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,10 +22,6 @@ public class Product extends BaseTimeEntity {
     private int price;
     private int deliveryPrice;
     private int totalPrice;
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "category_id")
-//    private Category category;
 
     @Enumerated(EnumType.STRING)
     private Category category;

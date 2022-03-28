@@ -1,7 +1,6 @@
 package jjfactory.ticketcms.dto;
 
-import jjfactory.ticketcms.domain.Address;
-import jjfactory.ticketcms.domain.user.Gender;
+import jjfactory.ticketcms.domain.user.enums.Gender;
 import jjfactory.ticketcms.domain.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
