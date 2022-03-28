@@ -1,4 +1,4 @@
-package jjfactory.ticketcms.config;
+package jjfactory.ticketcms.config.auth;
 
 import jjfactory.ticketcms.domain.user.User;
 import lombok.Data;

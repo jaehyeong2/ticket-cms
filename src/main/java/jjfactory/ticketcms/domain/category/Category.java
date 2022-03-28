@@ -2,14 +2,12 @@ package jjfactory.ticketcms.domain.category;
 
 import jjfactory.ticketcms.domain.BaseTimeEntity;
 import jjfactory.ticketcms.domain.product.Product;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
+@ToString
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter

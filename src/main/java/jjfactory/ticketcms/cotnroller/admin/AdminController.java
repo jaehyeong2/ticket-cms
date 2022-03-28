@@ -25,16 +25,4 @@ public class AdminController {
         return "home";
     }
 
-    @GetMapping("/category")
-    public String getCategories(Model model){
-        List<Category> categories = categoryService.findAll();
-        model.addAttribute("categories",categories);
-        return "category/categories";
-    }
-
-    @GetMapping("/category/add")
-    public String getCategoryAdd(){
-        return "category/categoryAdd";
-    }
-
 }

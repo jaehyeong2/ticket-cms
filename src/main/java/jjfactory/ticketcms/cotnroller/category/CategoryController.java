@@ -1,34 +1,31 @@
 package jjfactory.ticketcms.cotnroller.category;
 
 import jjfactory.ticketcms.domain.category.Category;
-import jjfactory.ticketcms.domain.product.Product;
-import jjfactory.ticketcms.dto.CategoryReq;
-import jjfactory.ticketcms.dto.CommonRes;
-import jjfactory.ticketcms.dto.ProductReq;
 import jjfactory.ticketcms.service.category.CategoryServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
 
 @RequiredArgsConstructor
-@RestController
 @RequestMapping("/category")
+@Controller
 public class CategoryController {
 
     private final CategoryServiceImpl categoryService;
 
-    @PostMapping("")
-    public CommonRes<?> save(@RequestBody CategoryReq categoryReq){
-        Category category = categoryReq.toEntity();
-        categoryService.save(category);
-        return new CommonRes<>(HttpStatus.OK.value(),category);
+    @GetMapping("/category")
+    public String getCategories(Model model){
+        List<Category> categories = categoryService.findAll();
+        model.addAttribute("categories",categories);
+        return "category/categories";
     }
 
-    @DeleteMapping("/{id}")
-    public CommonRes<?> delete(@PathVariable Long id){
-        categoryService.deleteById(id);
-        return new CommonRes<>(HttpStatus.OK.value(),"");
+    @GetMapping("/category/add")
+    public String getCategoryAdd(){
+        return "category/categoryAdd";
     }
 }
-

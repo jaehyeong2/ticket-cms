@@ -1,13 +1,10 @@
 package jjfactory.ticketcms.domain.product;
 
 import jjfactory.ticketcms.domain.BaseTimeEntity;
-import jjfactory.ticketcms.domain.category.Category;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+
 
 @Builder
 @Getter
@@ -25,8 +22,11 @@ public class Product extends BaseTimeEntity {
     private int deliveryPrice;
     private int totalPrice;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "category_id")
+//    private Category category;
+
+    @Enumerated(EnumType.STRING)
     private Category category;
 
     public Product(Long id, String name, int price, int deliveryPrice, int totalPrice, Category category) {
@@ -36,6 +36,14 @@ public class Product extends BaseTimeEntity {
         this.deliveryPrice = deliveryPrice;
         this.totalPrice = totalPrice;
         this.category = category;
+    }
+
+    public Product(Long id, String name, int price, int deliveryPrice, int totalPrice) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.deliveryPrice = deliveryPrice;
+        this.totalPrice = totalPrice;
     }
 
     public void changeProduct(String name, int price) {

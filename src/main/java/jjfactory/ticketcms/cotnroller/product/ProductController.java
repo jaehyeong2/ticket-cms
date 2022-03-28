@@ -1,6 +1,6 @@
 package jjfactory.ticketcms.cotnroller.product;
 
-import jjfactory.ticketcms.domain.category.Category;
+import jjfactory.ticketcms.domain.product.Category;
 import jjfactory.ticketcms.domain.product.Product;
 import jjfactory.ticketcms.service.category.CategoryServiceImpl;
 import jjfactory.ticketcms.service.product.ProductServiceImpl;
@@ -30,16 +30,16 @@ public class ProductController {
 
     @GetMapping("/add")
     public String getProductAdd(Model model) {
-        List<Category> categories = categoryService.findAll();
-        model.addAttribute("categories",categories);
+//        List<Category> categories = categoryService.findAll();
+//        model.addAttribute("categories",);
         return "product/productAdd";
     }
 
     @GetMapping("/{id}")
     public String getProductUpdate(@PathVariable Long id, Model model) {
         Product product = productService.findById(id);
-        List<Category> categories = categoryService.findAll();
-        model.addAttribute("categories",categories);
+//        List<Category> categories = categoryService.findAll();
+//        model.addAttribute("categories",categories);
         model.addAttribute("product",product);
         return "product/productUpdate";
     }

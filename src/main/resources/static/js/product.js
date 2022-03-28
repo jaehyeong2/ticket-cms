@@ -20,8 +20,11 @@ let index = {
     save: function () {
         let data = {
             name: $("#name").val(),
-            price: $("#price").val()
+            price: $("#price").val(),
+            category: $("#category").val()
         };
+
+        console.log(data);
 
         $.ajax({
             type: "POST",
