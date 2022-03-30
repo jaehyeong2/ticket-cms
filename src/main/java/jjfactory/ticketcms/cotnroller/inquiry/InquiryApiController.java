@@ -10,6 +10,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @RequiredArgsConstructor
 @RequestMapping("/inquiry")
 @RestController
@@ -35,4 +39,5 @@ public class InquiryApiController {
         inquiryService.updateById(id,inquiry);
         return new CommonRes<>(HttpStatus.OK.value(),inquiry);
     }
+
 }

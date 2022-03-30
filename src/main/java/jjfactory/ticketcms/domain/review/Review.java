@@ -1,6 +1,7 @@
 package jjfactory.ticketcms.domain.review;
 
 import jjfactory.ticketcms.domain.BaseTimeEntity;
+import jjfactory.ticketcms.domain.product.Product;
 import jjfactory.ticketcms.domain.user.User;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -28,11 +29,16 @@ public class Review extends BaseTimeEntity {
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Review(Long id, String title, String content, int starPoint, User user) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id")
+    private Product product;
+
+    public Review(Long id, String title, String content, int starPoint, User user, Product product) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.starPoint = starPoint;
         this.user = user;
+        this.product = product;
     }
 }

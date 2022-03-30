@@ -14,22 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     private final UserServiceImpl userService;
 
-    //회원가입
-    @PostMapping("/signup")
-    @ResponseBody
-    public CommonRes<?> signup(@RequestBody SignUpDto signUpDto){
-        User user = signUpDto.toEntity();
-        userService.join(user);
-        return new CommonRes<>(HttpStatus.OK.value(),user);
-    }
 
-    @GetMapping("/signin")
-    public String signinForm(){
-        return "auth/signin";
-    }
 
-    @GetMapping("/signup")
-    public String signupForm(){
-        return "auth/signup";
-    }
+
 }

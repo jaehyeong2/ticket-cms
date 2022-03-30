@@ -1,5 +1,6 @@
 package jjfactory.ticketcms.config.auth;
 
+import jjfactory.ticketcms.domain.admin.Admin;
 import jjfactory.ticketcms.domain.user.User;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,13 +11,13 @@ import java.util.Collection;
 @Data
 public class UserDetailsImpl implements UserDetails {
 
-    private User user;
+    private Admin admin;
 
     public UserDetailsImpl() {
     }
 
-    public UserDetailsImpl(User user) {
-        this.user = user;
+    public UserDetailsImpl(Admin admin) {
+        this.admin = admin;
     }
 
     @Override
@@ -26,12 +27,12 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public String getPassword() {
-        return user.getPassword();
+        return admin.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return user.getUsername();
+        return admin.getUsername();
     }
 
     @Override

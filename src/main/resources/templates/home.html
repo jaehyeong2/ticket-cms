@@ -36,27 +36,71 @@
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3 pt-3" >
+
+        <div class="col-sm-2 pt-3" >
             <div class="card" style="background-color:white;">
                 <div class="card-body">
-                    <h4 class="card-title">Coupons</h4>
-                    <p class="card-text">쿠폰 수정/등록하기</p>
-                    <a href="#" th:href="@{/coupon}" class="card-link btn btn-primary">Manage</a>
-
+                    <h4 class="card-title">Users</h4>
+                    <p class="card-text">회원 관리하기</p>
+                    <a th:href="@{/user}" class="card-link btn btn-primary">Manage</a>
                 </div>
             </div>
         </div>
-        <div class="col-sm-3 pt-3" >
+
+        <div class="col-sm-2 pt-3" >
+            <div class="card" style="background-color:white;">
+                <div class="card-body">
+                    <h4 class="card-title">Orders</h4>
+                    <p class="card-text">주문 관리하기</p>
+                    <a th:href="@{/order}" class="card-link btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-2 pt-3" >
             <div class="card" style="background-color:white;">
                 <div class="card-body">
                     <h4 class="card-title">Products</h4>
-                    <p class="card-text">상품 수정/등록하기</p>
-                    <a href="#" th:href="@{/product}" class="card-link btn btn-primary">Manage</a>
-
+                    <p class="card-text">상품 관리하기</p>
+                    <a th:href="@{/product}" class="card-link btn btn-primary">Manage</a>
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2 pt-3" >
+                <div class="card" style="background-color:white;">
+                    <div class="card-body">
+                        <h4 class="card-title">Coupons</h4>
+                        <p class="card-text">쿠폰 관리하기</p>
+                        <a th:href="@{/coupon}" class="card-link btn btn-primary">Manage</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2 pt-3" >
+                <div class="card" style="background-color:white;">
+                    <div class="card-body">
+                        <h4 class="card-title">Inquiry</h4>
+                        <p class="card-text">문의 관리하기</p>
+                        <a th:href="@{/inquiry}" class="card-link btn btn-primary">Manage</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2 pt-3" >
+                <div class="card" style="background-color:white;">
+                    <div class="card-body">
+                        <h4 class="card-title">Notice</h4>
+                        <p class="card-text">공지사항 관리하기</p>
+                        <a th:href="@{/notice}" class="card-link btn btn-primary">Manage</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>

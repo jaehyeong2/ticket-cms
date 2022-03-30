@@ -41,6 +41,16 @@
                     <label for="name">Name</label>
                     <input type="text" class="form-control" required th:value="${name}" name="name" id="name"  placeholder="Enter name">
                 </div>
+
+                <div class="form-group">
+                    <label for="coupon">종류를 선택하세요</label>
+                    <select class="form-control" id="coupon" name="coupon">
+                        <!--                            <option th:each="category :${categories}" th:text="${category.name}"-->
+                        <!--                                    th:value="${category.id}" id="categoryName">-->
+                        <option th:value="PRODUCT">상품가격 할인</option>
+                        <option th:value="DELIVERY">배달가격 할인</option>
+                    </select>
+                </div>
             </form>
             <button id="btn-save" class="btn btn-primary">Submit</button>
         </div>

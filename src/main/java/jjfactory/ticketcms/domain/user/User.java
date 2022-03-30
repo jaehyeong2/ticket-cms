@@ -45,8 +45,6 @@ public class User extends BaseTimeEntity {
         this.address = address;
     }
 
-    public void passwordEncode(String encoded) {
-        this.password = encoded;
-    }
+
 
 }

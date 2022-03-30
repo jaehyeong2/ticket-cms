@@ -15,5 +15,10 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
     private final OrderServiceImpl orderService;
 
+    @GetMapping("")
+    public String getOrders(){
+        return "order/orders";
+    }
+
 
 }

@@ -20,12 +20,15 @@ let index = {
     save: function () {
         let data = {
             name: $("#name").val(),
-            coupon: $("#coupon").val()
+            price: $("#price").val(),
+            category: $("#category").val()
         };
+
+        console.log(data);
 
         $.ajax({
             type: "POST",
-            url: "/coupon",
+            url: "/product",
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
             dataType: "json"
@@ -38,15 +41,37 @@ let index = {
     },
 
     deleteById: function(){
-        let id = $("#couponId").text();
+        let id = $("#productId").text();
 
         $.ajax({
             type: "DELETE",
-            url: "/coupon/"+id,
+            url: "/product/"+id,
             dataType: "json"
         }).done(function(resp){
             alert("삭제가 완료되었습니다.");
             document.location.reload(true);
+        }).fail(function(error){
+            alert(JSON.stringify(error));
+        });
+    },
+
+    update: function(){
+        let id = $("#productId").text();
+
+        let data = {
+            name: $("#name").val(),
+            price: $("#price").val()
+        };
+
+        $.ajax({
+            type: "PUT",
+            url: "/product/"+id,
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        }).done(function(resp){
+            alert("수정 완료되었습니다.");
+            history.back();
         }).fail(function(error){
             alert(JSON.stringify(error));
         });

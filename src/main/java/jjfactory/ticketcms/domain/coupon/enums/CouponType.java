@@ -1,5 +1,5 @@
 package jjfactory.ticketcms.domain.coupon.enums;
 
-public enum Type {
+public enum CouponType {
     PRODUCT, DELIVERY
 }

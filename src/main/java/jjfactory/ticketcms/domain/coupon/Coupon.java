@@ -1,12 +1,11 @@
 package jjfactory.ticketcms.domain.coupon;
 
 import jjfactory.ticketcms.domain.BaseTimeEntity;
-import jjfactory.ticketcms.domain.coupon.enums.Type;
+import jjfactory.ticketcms.domain.coupon.enums.CouponType;
 import jjfactory.ticketcms.domain.product.Product;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @ToString
 @Builder
@@ -21,16 +20,27 @@ public class Coupon extends BaseTimeEntity {
     private Long id;
     private String name;
 
+    private long discountRate;
+    private int discountPrice;
+    
+    private int minPrice; // 최소사용금액
+
+    private boolean duplicate; // 중복사용가능여부
+
     @Enumerated(EnumType.STRING)
-    private Type type;
+    private CouponType type;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
 
-    public Coupon(Long id, String name, Type type, Product product) {
+    public Coupon(Long id, String name, long discountRate, int discountPrice, int minPrice, boolean duplicate, CouponType type, Product product) {
         this.id = id;
         this.name = name;
+        this.discountRate = discountRate;
+        this.discountPrice = discountPrice;
+        this.minPrice = minPrice;
+        this.duplicate = duplicate;
         this.type = type;
         this.product = product;
     }

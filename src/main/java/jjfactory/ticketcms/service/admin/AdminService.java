@@ -7,12 +7,7 @@ import java.util.List;
 
 public interface AdminService {
     Admin findUserById(Long id);
-
     List<Admin> findAll();
-
-    @Transactional
-    void save (Admin admin);
-
-    @Transactional
+    void join(Admin admin);
     void deleteById(Long id);
 }

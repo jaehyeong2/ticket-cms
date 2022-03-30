@@ -31,15 +31,10 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public void join (User user){
-        // 패스워드 인코딩
-        String rawPassword = user.getPassword();
-        String encoded = encoder.encode(rawPassword);
-        user.passwordEncode(encoded);
-
+    public void save(User user) {
         userRepository.save(user);
     }
-
+    
     @Transactional
     @Override
     public void deleteById (Long id){

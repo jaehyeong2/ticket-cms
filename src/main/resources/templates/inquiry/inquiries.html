@@ -35,30 +35,28 @@
 </nav>
 
 <div class="container">
-    <a th:href="@{/coupon/add}" style="margin: 20px 0" class="btn btn-primary">쿠폰 추가하기</a>
+    <a th:href="@{/inquiry/add}" style="margin: 20px 0" class="btn btn-primary">문의 추가하기</a>
     <table class="table">
         <thead class="thead-light">
         <tr>
             <th scope="col">S/N</th>
-            <th scope="col">쿠폰명</th>
-            <th scope="col">쿠폰종류</th>
+            <th scope="col">카테고리</th>
             <th scope="col">삭제하기</th>
             <th scope="col">수정하기</th>
         </tr>
         </thead>
         <tbody>
 
-        <tr th:each="coupon, iStat : ${coupons}">
+        <tr th:each="inquiry, iStat : ${inquiries}">
             <th scope="row" th:text="${iStat.index + 1}"></th>
-            <td th:id="couponId" style="display:none" th:text="${coupon.id}"></td>
-            <td th:text="${coupon.name}"></td>
-            <td th:text="${coupon.type}"></td>
+            <td th:id="couponId" style="display:none" th:text="${inquiry.id}"></td>
+            <td th:text="${inquiry.title}"></td>
             <td><button id="btn-delete" class="btn btn-danger">삭제하기</button></td>
-            <td><a href="" th:href="@{/coupon/update/{id}(id=${coupon.id})}" class="btn btn-warning">업데이트</a></td>
+            <td><a href="" th:href="@{/inquiry/update/{id}(id=${inquiry.id})}" class="btn btn-warning">업데이트</a></td>
         </tr>
         </tbody>
     </table>
 </div>
-<script src="/js/coupon.js"></script>
+<script src="/js/inquiry.js"></script>
 </body>
 </html>
