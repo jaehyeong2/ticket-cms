@@ -28,12 +28,13 @@ public class User extends BaseTimeEntity {
     private String phone;
     private Gender gender; //MALE, FEMALE
 
-    private int grpCode; // 권한
+    private boolean eventAgreement; //이벤트 동의 여부
+    private boolean marketingAgreement;// 마케팅 동의 여부
 
     @Embedded
     private Address address;
 
-    public User(Long id, String name, String username, String password, String email, String phone, Gender gender, int grpCode, Address address) {
+    public User(Long id, String name, String username, String password, String email, String phone, Gender gender, boolean eventAgreement, boolean marketingAgreement, Address address) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -41,10 +42,8 @@ public class User extends BaseTimeEntity {
         this.email = email;
         this.phone = phone;
         this.gender = gender;
-        this.grpCode = grpCode;
+        this.eventAgreement = eventAgreement;
+        this.marketingAgreement = marketingAgreement;
         this.address = address;
     }
-
-
-
 }
