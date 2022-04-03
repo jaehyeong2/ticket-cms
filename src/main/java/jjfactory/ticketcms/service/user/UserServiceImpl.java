@@ -29,6 +29,11 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
+    @Override
+    public Long countUser() {
+        return userRepository.count();
+    }
+
     @Transactional
     @Override
     public void save(User user) {

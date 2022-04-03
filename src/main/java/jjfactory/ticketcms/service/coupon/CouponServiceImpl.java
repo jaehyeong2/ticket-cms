@@ -27,6 +27,11 @@ public class CouponServiceImpl implements CouponService {
         return couponRepository.findAll();
     }
 
+    @Override
+    public Long countCoupon(){
+        return couponRepository.count();
+    }
+
     @Transactional
     @Override
     public void save(Coupon coupon) {

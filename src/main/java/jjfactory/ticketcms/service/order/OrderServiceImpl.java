@@ -26,6 +26,11 @@ public class OrderServiceImpl implements OrderService {
         return orderRepository.findAll();
     }
 
+    @Override
+    public Long countOrder(){
+        return orderRepository.count();
+    }
+
     @Transactional
     @Override
     public void save (Order order){

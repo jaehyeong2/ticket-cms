@@ -35,14 +35,6 @@ public class Product extends BaseTimeEntity {
         this.category = category;
     }
 
-    public Product(Long id, String name, int price, int deliveryPrice, int totalPrice) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.deliveryPrice = deliveryPrice;
-        this.totalPrice = totalPrice;
-    }
-
     public void changeProduct(String name, int price) {
         this.name = name;
         this.price = price;

@@ -27,6 +27,11 @@ public class InquiryServiceImpl implements InquiryService {
         return inquiryRepository.findAll();
     }
 
+    @Override
+    public Long countInquiry(){
+        return inquiryRepository.count();
+    }
+
     @Transactional
     @Override
     public void save(Inquiry inquiry) {

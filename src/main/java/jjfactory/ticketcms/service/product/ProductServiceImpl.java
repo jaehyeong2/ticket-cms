@@ -20,9 +20,15 @@ public class ProductServiceImpl implements ProductService{
             throw new IllegalArgumentException("조회 실패");
         });
     }
+
     @Override
     public List<Product> findAll(){
         return productRepository.findAll();
+    }
+
+    @Override
+    public Long countProduct(){
+        return productRepository.count();
     }
 
     @Transactional

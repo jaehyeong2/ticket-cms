@@ -20,7 +20,10 @@
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/}" href="#">홈으로 이동</a>
+                    <a class="nav-link" th:href="@{/}">홈</a>
+                </li>
+                <li>
+                    <div class="nav-link" th:text="${principal.username} + '님'"></div>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" th:href="@{/logout}" href="#">로그아웃</a>
@@ -42,6 +45,8 @@
                 <div class="card-body">
                     <h4 class="card-title">Users</h4>
                     <p class="card-text">회원 관리하기</p>
+                    <p class="card-text" th:text="'회원 수 :' + ${userCount} + '명'"></p>
+                    <div class="card-text"></div>
                     <a th:href="@{/user}" class="card-link btn btn-primary">Manage</a>
                 </div>
             </div>
@@ -52,6 +57,8 @@
                 <div class="card-body">
                     <h4 class="card-title">Orders</h4>
                     <p class="card-text">주문 관리하기</p>
+                    <p class="card-text" th:text="'주문 수 :' + ${orderCount} + '건'"></p>
+                    <div class="card-text"></div>
                     <a th:href="@{/order}" class="card-link btn btn-primary">Manage</a>
                 </div>
             </div>
@@ -62,6 +69,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Products</h4>
                     <p class="card-text">상품 관리하기</p>
+                    <p class="card-text" th:text="'상품 수 : '+${productCount}+ '개'"></p>
                     <a th:href="@{/product}" class="card-link btn btn-primary">Manage</a>
                 </div>
             </div>
@@ -75,6 +83,8 @@
                     <div class="card-body">
                         <h4 class="card-title">Coupons</h4>
                         <p class="card-text">쿠폰 관리하기</p>
+                        <p class="card-text" th:text="'쿠폰 수 :' + ${couponCount} + '개'"></p>
+                        <div class="card-text"></div>
                         <a th:href="@{/coupon}" class="card-link btn btn-primary">Manage</a>
 
                     </div>
@@ -86,6 +96,8 @@
                     <div class="card-body">
                         <h4 class="card-title">Inquiry</h4>
                         <p class="card-text">문의 관리하기</p>
+                        <p class="card-text" th:text="'문의 수 :' + ${inquiryCount} + '건'"></p>
+                        <div class="card-text"></div>
                         <a th:href="@{/inquiry}" class="card-link btn btn-primary">Manage</a>
                     </div>
                 </div>
@@ -96,6 +108,8 @@
                     <div class="card-body">
                         <h4 class="card-title">Notice</h4>
                         <p class="card-text">공지사항 관리하기</p>
+                        <p class="card-text" th:text="'공지사항 :' + ${noticeCount} + '개'"></p>
+                        <div class="card-text"></div>
                         <a th:href="@{/notice}" class="card-link btn btn-primary">Manage</a>
                     </div>
                 </div>

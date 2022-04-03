@@ -18,7 +18,6 @@ public class SignUpDto {
     @NotBlank
     private String name;
     @NotBlank
-    @Min(2)
     private String username;  //아이디
     @NotBlank
     private String password;

@@ -27,6 +27,11 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
+    public Long countNotice(){
+        return noticeRepository.count();
+    }
+
+    @Override
     public void save(Notice notice) {
         noticeRepository.save(notice);
     }

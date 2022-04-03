@@ -26,15 +26,15 @@ public class User extends BaseTimeEntity {
     private String password;
     private String email;
     private String phone;
+    @Enumerated(EnumType.STRING)
     private Gender gender; //MALE, FEMALE
 
-    private boolean eventAgreement; //이벤트 동의 여부
-    private boolean marketingAgreement;// 마케팅 동의 여부
+    private String eventAgreement; //이벤트 동의 여부
 
     @Embedded
     private Address address;
 
-    public User(Long id, String name, String username, String password, String email, String phone, Gender gender, boolean eventAgreement, boolean marketingAgreement, Address address) {
+    public User(Long id, String name, String username, String password, String email, String phone, Gender gender, String eventAgreement,Address address) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -43,7 +43,6 @@ public class User extends BaseTimeEntity {
         this.phone = phone;
         this.gender = gender;
         this.eventAgreement = eventAgreement;
-        this.marketingAgreement = marketingAgreement;
         this.address = address;
     }
 }
