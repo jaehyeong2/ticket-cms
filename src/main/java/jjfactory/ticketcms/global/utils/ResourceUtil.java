@@ -21,7 +21,7 @@ public class ResourceUtil {
 
     private static final String LIVE_PHOTO_EXE = "HEIC";
 
-    @Value("${app.filePath}")
+//    @Value("${app.filePath}")
     public void setUploadPath(String path) {
         PATH = path;
     }

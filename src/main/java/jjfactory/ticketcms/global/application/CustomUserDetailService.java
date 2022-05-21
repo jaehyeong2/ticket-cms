@@ -1,7 +1,7 @@
 package jjfactory.ticketcms.global.application;
 
-import jjfactory.ticketcms.business.domain.user.User;
-import jjfactory.ticketcms.business.repository.user.UserRepository;
+import jjfactory.ticketcms.business.user.entity.User;
+import jjfactory.ticketcms.business.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
