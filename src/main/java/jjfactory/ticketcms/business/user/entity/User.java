@@ -7,14 +7,16 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
-@Builder
 @Getter
 @Inheritance(strategy = InheritanceType.JOINED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -39,8 +41,14 @@ public class User extends BaseTimeEntity implements UserDetails {
     @Embedded
     private Address address;
 
-    public User(Long id, String name, String username, String password, String email, String phone, Gender gender, String eventAgreement,Address address) {
-        this.id = id;
+    private LocalDateTime lastLoginDate;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+    }
+
+    public User(String name, String username, String password, String email, String phone, Gender gender, String eventAgreement, Address address, LocalDateTime lastLoginDate) {
         this.name = name;
         this.username = username;
         this.password = password;
@@ -49,11 +57,7 @@ public class User extends BaseTimeEntity implements UserDetails {
         this.gender = gender;
         this.eventAgreement = eventAgreement;
         this.address = address;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        this.lastLoginDate = lastLoginDate;
     }
 
     @Override
