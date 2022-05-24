@@ -1,5 +1,6 @@
 package jjfactory.ticketcms.business.admin.entity;
 
+import jjfactory.ticketcms.business.user.entity.User;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Admin {
+public class Admin extends User {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "admin_id")
